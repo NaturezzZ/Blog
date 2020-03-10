@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 22222
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
