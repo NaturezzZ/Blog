@@ -1,13 +1,27 @@
-2020-03-10 06:52:52.036 ERROR 3495 --- [XNIO-1 task-13] r.h.a.controller.core.CommonController   : Request URL: [http://blog.zhengnq.top/error], URI: [/error], Request Method: [GET], IP: [110.167.94.154]
-2020-03-10 09:38:42.311  WARN 3495 --- [XNIO-1 task-10] .s.h.DefaultAuthenticationFailureHandler : Handle unsuccessful authentication, ip: [183.197.18.81]
-2020-03-10 09:38:42.312  WARN 3495 --- [XNIO-1 task-15] .s.h.DefaultAuthenticationFailureHandler : Handle unsuccessful authentication, ip: [183.197.18.81]
-2020-03-10 09:38:42.313  WARN 3495 --- [XNIO-1 task-7] .s.h.DefaultAuthenticationFailureHandler : Handle unsuccessful authentication, ip: [183.197.18.81]
-2020-03-10 09:38:42.313  WARN 3495 --- [XNIO-1 task-9] .s.h.DefaultAuthenticationFailureHandler : Handle unsuccessful authentication, ip: [183.197.18.81]
-2020-03-10 09:38:42.391  WARN 3495 --- [XNIO-1 task-14] .s.h.DefaultAuthenticationFailureHandler : Handle unsuccessful authentication, ip: [183.197.18.81]
-2020-03-10 09:38:42.497 ERROR 3495 --- [XNIO-1 task-15] .s.h.DefaultAuthenticationFailureHandler : Authentication failure
+2020-03-24 06:08:30.343  WARN 1443 --- [Timer-0] run.halo.app.cache.AbstractCacheStore    : Cache key: [cache_lock_public run.halo.app.security.token.AuthToken run.halo.app.controller.admin.api.AdminController.auth(run.halo.app.model.params.LoginParam)] has been expired
+2020-03-24 06:09:15.923 ERROR 1443 --- [XNIO-1 task-14] r.h.a.controller.core.CommonController   : Request URL: [http://blog.zhengnq.top/error], URI: [/error], Request Method: [GET], IP: [183.197.17.251]
+2020-03-24 06:09:30.906 ERROR 1443 --- [XNIO-1 task-6] r.h.a.controller.core.CommonController   : Request URL: [http://blog.zhengnq.top/error], URI: [/error], Request Method: [GET], IP: [183.197.17.251]
+2020-03-24 06:11:15.658 ERROR 1443 --- [XNIO-1 task-4] r.h.app.core.ControllerExceptionHandler  : Captured an exception
 
-run.halo.app.exception.AuthenticationException: Token 已过期或不存在
-	at run.halo.app.security.filter.AdminAuthenticationFilter.doAuthenticate(AdminAuthenticationFilter.java:75) [classes!/:1.2.0]
+org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public run.halo.app.model.dto.PhotoDTO run.halo.app.controller.admin.api.PhotoController.createBy(run.halo.app.model.params.PhotoParam): [Field error in object 'photoParam' on field 'name': rejected value [null]; codes [NotBlank.photoParam.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [photoParam.name,name]; arguments []; default message [name]]; default message [照片名称不能为空]] 
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:523) [jakarta.servlet-api-4.0.3.jar!/:4.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590) [jakarta.servlet-api-4.0.3.jar!/:4.0.3]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at run.halo.app.security.filter.AdminAuthenticationFilter.doAuthenticate(AdminAuthenticationFilter.java:89) [classes!/:1.2.0]
 	at run.halo.app.security.filter.AbstractAuthenticationFilter.doFilterInternal(AbstractAuthenticationFilter.java:167) [classes!/:1.2.0]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
@@ -56,43 +70,49 @@ run.halo.app.exception.AuthenticationException: Token 已过期或不存在
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_242]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_242]
 
-2020-03-10 09:38:42.497 ERROR 3495 --- [XNIO-1 task-7] .s.h.DefaultAuthenticationFailureHandler : Authentication failure
+2020-03-24 06:12:10.879 ERROR 1443 --- [XNIO-1 task-15] r.h.a.controller.core.CommonController   : Request URL: [http://blog.zhengnq.top/error], URI: [/error], Request Method: [GET], IP: [183.197.17.251]
+2020-03-24 06:12:30.481 ERROR 1443 --- [XNIO-1 task-11] io.undertow.request                      : UT005023: Exception handling request to /photos
 
-run.halo.app.exception.AuthenticationException: Token 已过期或不存在
-	at run.halo.app.security.filter.AdminAuthenticationFilter.doAuthenticate(AdminAuthenticationFilter.java:75) [classes!/:1.2.0]
-	at run.halo.app.security.filter.AbstractAuthenticationFilter.doFilterInternal(AbstractAuthenticationFilter.java:167) [classes!/:1.2.0]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at run.halo.app.filter.CorsFilter.doFilter(CorsFilter.java:41) [classes!/:1.2.0]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) [spring-boot-actuator-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+javax.servlet.ServletException: Could not resolve view with name 'themes/iissnan_next/photos' in servlet with name 'dispatcherServlet'
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1353) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:503) ~[jakarta.servlet-api-4.0.3.jar!/:4.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[jakarta.servlet-api-4.0.3.jar!/:4.0.3]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at run.halo.app.security.filter.ContentFilter.doAuthenticate(ContentFilter.java:35) ~[classes!/:1.2.0]
+	at run.halo.app.security.filter.AbstractAuthenticationFilter.doFilterInternal(AbstractAuthenticationFilter.java:167) ~[classes!/:1.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) ~[spring-boot-actuator-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
 	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
@@ -108,51 +128,57 @@ run.halo.app.exception.AuthenticationException: Token 已过期或不存在
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_242]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_242]
 
-2020-03-10 09:38:42.497 ERROR 3495 --- [XNIO-1 task-10] .s.h.DefaultAuthenticationFailureHandler : Authentication failure
+2020-03-24 06:12:30.487 ERROR 1443 --- [XNIO-1 task-11] r.h.a.controller.core.CommonController   : Request URL: [http://blog.zhengnq.top/error], URI: [/error], Request Method: [GET], IP: [183.197.17.251]
+2020-03-24 06:12:30.494 ERROR 1443 --- [XNIO-1 task-11] r.h.a.controller.core.CommonController   : Captured an exception
 
-run.halo.app.exception.AuthenticationException: Token 已过期或不存在
-	at run.halo.app.security.filter.AdminAuthenticationFilter.doAuthenticate(AdminAuthenticationFilter.java:75) [classes!/:1.2.0]
-	at run.halo.app.security.filter.AbstractAuthenticationFilter.doFilterInternal(AbstractAuthenticationFilter.java:167) [classes!/:1.2.0]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at run.halo.app.filter.CorsFilter.doFilter(CorsFilter.java:41) [classes!/:1.2.0]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) [spring-boot-actuator-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+javax.servlet.ServletException: Could not resolve view with name 'themes/iissnan_next/photos' in servlet with name 'dispatcherServlet'
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1353) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:503) ~[jakarta.servlet-api-4.0.3.jar!/:4.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[jakarta.servlet-api-4.0.3.jar!/:4.0.3]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at run.halo.app.security.filter.ContentFilter.doAuthenticate(ContentFilter.java:35) ~[classes!/:1.2.0]
+	at run.halo.app.security.filter.AbstractAuthenticationFilter.doFilterInternal(AbstractAuthenticationFilter.java:167) ~[classes!/:1.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) ~[spring-boot-actuator-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
@@ -160,208 +186,4 @@ run.halo.app.exception.AuthenticationException: Token 已过期或不存在
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_242]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_242]
 
-2020-03-10 09:38:42.497 ERROR 3495 --- [XNIO-1 task-9] .s.h.DefaultAuthenticationFailureHandler : Authentication failure
-
-run.halo.app.exception.AuthenticationException: Token 已过期或不存在
-	at run.halo.app.security.filter.AdminAuthenticationFilter.doAuthenticate(AdminAuthenticationFilter.java:75) [classes!/:1.2.0]
-	at run.halo.app.security.filter.AbstractAuthenticationFilter.doFilterInternal(AbstractAuthenticationFilter.java:167) [classes!/:1.2.0]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at run.halo.app.filter.CorsFilter.doFilter(CorsFilter.java:41) [classes!/:1.2.0]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) [spring-boot-actuator-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_242]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_242]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_242]
-
-2020-03-10 09:38:42.497 ERROR 3495 --- [XNIO-1 task-14] .s.h.DefaultAuthenticationFailureHandler : Authentication failure
-
-run.halo.app.exception.AuthenticationException: Token 已过期或不存在
-	at run.halo.app.security.filter.AdminAuthenticationFilter.doAuthenticate(AdminAuthenticationFilter.java:75) [classes!/:1.2.0]
-	at run.halo.app.security.filter.AbstractAuthenticationFilter.doFilterInternal(AbstractAuthenticationFilter.java:167) [classes!/:1.2.0]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at run.halo.app.filter.CorsFilter.doFilter(CorsFilter.java:41) [classes!/:1.2.0]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) [spring-boot-actuator-2.2.1.RELEASE.jar!/:2.2.1.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99) [undertow-servlet-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830) [undertow-core-2.0.27.Final.jar!/:2.0.27.Final]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_242]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_242]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_242]
-
-2020-03-10 09:39:12.740  WARN 3495 --- [Timer-0] run.halo.app.cache.AbstractCacheStore    : Cache key: [cache_lock_public run.halo.app.security.token.AuthToken run.halo.app.controller.admin.api.AdminController.refresh(java.lang.String)] has been expired
-2020-03-10 10:05:14.524 ERROR 3495 --- [XNIO-1 task-10] r.h.a.controller.core.CommonController   : Request URL: [http://blog.zhengnq.top/error], URI: [/error], Request Method: [GET], IP: [58.19.92.170]
-2020-03-10 10:05:15.234 ERROR 3495 --- [XNIO-1 task-6] r.h.a.controller.core.CommonController   : Request URL: [http://blog.zhengnq.top/error], URI: [/error], Request Method: [GET], IP: [223.166.74.22]
-2020-03-10 10:28:05.381  INFO 3495 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-03-10 10:28:05.394  INFO 3495 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2020-03-10 10:28:05.507  INFO 3495 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-03-10 10:28:05.524  INFO 3495 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-03-10 10:28:05.535  INFO 3495 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-03-10 10:28:05.549  INFO 3495 --- [SpringContextShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2020-03-10 10:28:05.554  INFO 3495 --- [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.0.27.Final
-2020-03-10 10:28:31.526  INFO 7731 --- [main] run.halo.app.Application                 : Starting Application v1.2.0 on vultr.guest with PID 7731 (/root/.halo/halo-latest.jar started by root in /root/.halo)
-2020-03-10 10:28:31.544  INFO 7731 --- [main] run.halo.app.Application                 : No active profile set, falling back to default profiles: default
-2020-03-10 10:28:36.135  INFO 7731 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2020-03-10 10:28:36.680  INFO 7731 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 509ms. Found 21 repository interfaces.
-2020-03-10 10:28:39.922  INFO 7731 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-03-10 10:28:42.320  WARN 7731 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2020-03-10 10:28:42.385  INFO 7731 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
-2020-03-10 10:28:42.386  INFO 7731 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 10597 ms
-2020-03-10 10:28:43.339  INFO 7731 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-03-10 10:28:43.672  INFO 7731 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
-2020-03-10 10:28:44.472  INFO 7731 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-10 10:28:44.860  INFO 7731 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-03-10 10:28:45.683  INFO 7731 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-03-10 10:28:45.826  INFO 7731 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-10 10:28:50.742  INFO 7731 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-10 10:28:50.788  INFO 7731 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-03-10 10:29:04.531  INFO 7731 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoint(s) beneath base path '/api/admin/actuator'
-2020-03-10 10:29:04.940  INFO 7731 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-03-10 10:29:06.267  INFO 7731 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-03-10 10:29:06.416  INFO 7731 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-03-10 10:29:06.508  INFO 7731 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 2 custom documentation plugin(s)
-2020-03-10 10:29:06.509  INFO 7731 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Skipping initializing disabled plugin bean swagger v2.0
-2020-03-10 10:29:06.510  INFO 7731 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Skipping initializing disabled plugin bean swagger v2.0
-2020-03-10 10:29:06.591  INFO 7731 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
-2020-03-10 10:29:06.630  INFO 7731 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
-2020-03-10 10:29:06.681  INFO 7731 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
-2020-03-10 10:29:07.096  INFO 7731 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 22222 (http) with context path ''
-2020-03-10 10:29:07.099  INFO 7731 --- [main] run.halo.app.Application                 : Started Application in 38.02 seconds (JVM running for 40.045)
-2020-03-10 10:29:07.109  INFO 7731 --- [main] run.halo.app.listener.StartedListener    : Starting migrate database...
-2020-03-10 10:29:07.179  INFO 7731 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.1.0 by Redgate
-2020-03-10 10:29:07.287  INFO 7731 --- [main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:file:~/.halo/db/halo (H2 1.4)
-2020-03-10 10:29:07.405  INFO 7731 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.065s)
-2020-03-10 10:29:07.435  INFO 7731 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": 2
-2020-03-10 10:29:07.438  INFO 7731 --- [main] o.f.core.internal.command.DbMigrate      : Schema "PUBLIC" is up to date. No migration necessary.
-2020-03-10 10:29:07.440  INFO 7731 --- [main] run.halo.app.listener.StartedListener    : Migrate database succeed.
-2020-03-10 10:29:07.963  INFO 7731 --- [main] run.halo.app.listener.StartedListener    : Halo started at         https://blog.zhengnq.top
-2020-03-10 10:29:07.965  INFO 7731 --- [main] run.halo.app.listener.StartedListener    : Halo admin started at   https://blog.zhengnq.top/admin
-2020-03-10 10:29:07.967  INFO 7731 --- [main] run.halo.app.listener.StartedListener    : Halo has started successfully!
-2020-03-10 10:29:24.150  INFO 7731 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-03-10 10:29:24.150  INFO 7731 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-03-10 10:29:24.181  INFO 7731 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 30 ms
-2020-03-10 10:30:01.393  INFO 7731 --- [XNIO-1 task-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-03-10 10:31:32.684 ERROR 7731 --- [XNIO-1 task-4] r.h.a.controller.core.CommonController   : Request URL: [http://blog.zhengnq.top/error], URI: [/error], Request Method: [GET], IP: [183.197.18.81]
-2020-03-10 10:41:01.092  INFO 7731 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-03-10 10:41:01.105  INFO 7731 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2020-03-10 10:41:01.150  INFO 7731 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-03-10 10:41:01.154  INFO 7731 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-03-10 10:41:01.172  INFO 7731 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-03-10 10:41:01.179  INFO 7731 --- [SpringContextShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2020-03-10 10:41:01.209  INFO 7731 --- [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.0.27.Final
-2020-03-10 10:41:36.607  INFO 8510 --- [main] run.halo.app.Application                 : Starting Application v1.2.0 on vultr.guest with PID 8510 (/root/.halo/halo-latest.jar started by root in /root/.halo)
-2020-03-10 10:41:36.628  INFO 8510 --- [main] run.halo.app.Application                 : No active profile set, falling back to default profiles: default
-2020-03-10 10:41:41.076  INFO 8510 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2020-03-10 10:41:41.709  INFO 8510 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 582ms. Found 21 repository interfaces.
-2020-03-10 10:41:44.927  INFO 8510 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-03-10 10:41:47.176  WARN 8510 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2020-03-10 10:41:47.276  INFO 8510 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
-2020-03-10 10:41:47.277  INFO 8510 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 10356 ms
-2020-03-10 10:41:48.320  INFO 8510 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-03-10 10:41:48.666  INFO 8510 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
-2020-03-10 10:41:49.336  INFO 8510 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-10 10:41:49.634  INFO 8510 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-03-10 10:41:50.480  INFO 8510 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-03-10 10:41:50.602  INFO 8510 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-10 10:41:55.978  INFO 8510 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-10 10:41:56.014  INFO 8510 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-03-10 10:42:09.731  INFO 8510 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoint(s) beneath base path '/api/admin/actuator'
-2020-03-10 10:42:10.056  INFO 8510 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-03-10 10:42:11.355  INFO 8510 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-03-10 10:42:11.502  INFO 8510 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-03-10 10:42:11.614  INFO 8510 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 2 custom documentation plugin(s)
-2020-03-10 10:42:11.619  INFO 8510 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Skipping initializing disabled plugin bean swagger v2.0
-2020-03-10 10:42:11.620  INFO 8510 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Skipping initializing disabled plugin bean swagger v2.0
-2020-03-10 10:42:11.712  INFO 8510 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
-2020-03-10 10:42:11.757  INFO 8510 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
-2020-03-10 10:42:11.814  INFO 8510 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
-2020-03-10 10:42:12.169  INFO 8510 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 22222 (http) with context path ''
-2020-03-10 10:42:12.171  INFO 8510 --- [main] run.halo.app.Application                 : Started Application in 38.2 seconds (JVM running for 39.965)
-2020-03-10 10:42:12.178  INFO 8510 --- [main] run.halo.app.listener.StartedListener    : Starting migrate database...
-2020-03-10 10:42:12.222  INFO 8510 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.1.0 by Redgate
-2020-03-10 10:42:12.301  INFO 8510 --- [main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:file:~/.halo/db/halo (H2 1.4)
-2020-03-10 10:42:12.417  INFO 8510 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.063s)
-2020-03-10 10:42:12.451  INFO 8510 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": 2
-2020-03-10 10:42:12.452  INFO 8510 --- [main] o.f.core.internal.command.DbMigrate      : Schema "PUBLIC" is up to date. No migration necessary.
-2020-03-10 10:42:12.460  INFO 8510 --- [main] run.halo.app.listener.StartedListener    : Migrate database succeed.
-2020-03-10 10:42:13.043  INFO 8510 --- [main] run.halo.app.listener.StartedListener    : Halo started at         https://blog.zhengnq.top
-2020-03-10 10:42:13.048  INFO 8510 --- [main] run.halo.app.listener.StartedListener    : Halo admin started at   https://blog.zhengnq.top/admin
-2020-03-10 10:42:13.049  INFO 8510 --- [main] run.halo.app.listener.StartedListener    : Halo has started successfully!
-2020-03-10 10:42:15.122  INFO 8510 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-03-10 10:42:15.127  INFO 8510 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-03-10 10:42:15.155  INFO 8510 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 28 ms
+2020-03-24 08:04:30.341  WARN 1443 --- [Timer-0] run.halo.app.cache.AbstractCacheStore    : Cache key: [f3aba21d7445456e8024afc671353d8c] has been expired
